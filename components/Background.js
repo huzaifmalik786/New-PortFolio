@@ -15,14 +15,14 @@ const Background = () => {
                 const speedy = el.dataset.speedY;
                 let isInLeft = parseFloat(getComputedStyle(el).left) < window.innerWidth / 2 ? 1 : -1;
                 let zVal = (e.clientX - parseFloat(getComputedStyle(el).left)) * isInLeft * 0.1;
-                el.style.translate = `calc(0% - ${xVal * speedx}px) calc(0% - ${yVal * speedy}px) ${zVal}px`;
+                el.style.translate = `calc(0% + ${xVal * speedx}px) calc(0% + ${yVal * speedy}px) ${zVal}px`;
                 el.style.perspective = `2300px`
             })
         })
     }, [])
 
     return (
-        <div className={`bg-[#353] fixed left-0 top-0 w-[100vw] h-[100vh] overflow-hidden`}>
+        <div className={`bg-[#353] fixed left-0 top-0 w-[100vw] h-[100vh] overflow-hidden z-[-1]`}>
             <div className={Styles.vignette} />
             <img src="/background.png" data-speed-y="0.18" data-speed-x="0.2" className={`parallax ${Styles.parallax} ${Styles.bg_img}`} />
             <img src="/fog_7.png" data-speed-y="0.12" data-speed-x="0.17" className={`parallax ${Styles.parallax} ${Styles.fog_7}`} />
