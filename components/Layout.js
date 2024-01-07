@@ -8,11 +8,11 @@ const sora = Sora({
 
 import Nav from "../components/Nav";
 import Header from "../components/Header"
-import Background from "../components/Background";
+import TopLeftImg from "../components/TopLeftImg";
 
 const Layout = ({ children }) => {
-  return <div className={`page bg-ste text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}>
-    <Background/>
+  return <div className={`page bg-primary/100 text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}>
+    <TopLeftImg/>
     <Nav />
     <Header />
     {children}

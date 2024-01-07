@@ -40,7 +40,7 @@ const Nav = () => {
       >
         {navData.map((link, index) => {
           return (
-            <Link className={`${link.path === pathname && 'text-black'} relative flex items-center group hover:text-black transition-all duration-300`} key={index} href={link.path}>
+            <Link className={`${link.path === pathname && 'text-accent'} relative flex items-center group hover:text-accent transition-all duration-300`} key={index} href={link.path}>
               <div className='absolute pr-14 right-0 hidden xl:group-hover:flex'>
                 <div className='bg-white relative flex text-primary items-center p-[6px] rounded-[3px]'>
                   <div className='text-[12px] leading-none font-semibold capitalize'>{link.name}</div>
