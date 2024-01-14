@@ -30,7 +30,7 @@ const Nav = () => {
   return (
     <nav className='flex flex-col gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:h-screen xl:w-16 xl:max-x-md items-center xl:justify-center'>
       <div
-        className='flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-black/30 background-blur-sm text-3xl xl:text-xl xl:rounded-full'
+        className='flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[50px] xl:h-max py-8 bg-black/30 background-blur-sm text-3xl xl:text-xl xl:rounded-full'
       >
         {navData.map((link, index) => {
           return (

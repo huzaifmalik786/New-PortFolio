@@ -11,6 +11,11 @@
   background-color: #f13024;
 }
 
+.swiper-pagination{
+  position: relative !important;
+  margin-top: 20px;
+}
+
 .swiper-button-next:after,
 .swiper-button-prev:after,
 .swiper-button-next:after,

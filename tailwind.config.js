@@ -21,6 +21,19 @@ module.exports = {
       xl: '1200px',
     },
     extend: {
+      keyframes: {
+        'text-slide': {
+          '0%, 30%': {
+            transform: 'translateY(0%)',
+          },
+          '33%, 63%': {
+            transform: 'translateY(-33%)',
+          },
+          '66%, 96%': {
+            transform: 'translateY(-66%)',
+          },
+        },
+      },
       colors: {
         primary: '#131424',
         secondary: '#393A47',
@@ -34,6 +47,7 @@ module.exports = {
       },
       animation: {
         'spin-slow': 'spin 6s linear infinite',
+        'text-slide': 'text-slide 8s cubic-bezier(0.83, 0, 0.17, 1) infinite',
       },
       fontFamily: {
         poppins: [`var(--font-poppins)`, 'sans-serif'],

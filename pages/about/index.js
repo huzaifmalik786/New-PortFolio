@@ -45,29 +45,29 @@ const aboutData = [
     title: 'awards',
     info: [
       {
-        title: 'Webby Awards - Honoree',
-        stage: '2011 - 2012',
+        title: 'Kavach Hackathon - Winner',
+        stage: '2023',
       },
       {
-        title: 'Adobe Design Achievement Awards - Finalist',
-        stage: '2009 - 2010',
-      },
+        title: 'Appointed as Student Placement Coordinator - JMI',
+        stage: '2023'
+      }
     ],
   },
   {
     title: 'experience',
     info: [
       {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
+        title: 'SDE Intern - Heliverse Technologies',
+        stage: '2023 - Present*',
       },
       {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
+        title: 'Tech Lead - 180DC JMI',
+        stage: '2023 - Present*',
       },
       {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
+        title: 'Web Development Team Lead - GDSC,JMI',
+        stage: '2022 - 2023',
       },
     ],
   },
@@ -75,16 +75,16 @@ const aboutData = [
     title: 'credentials',
     info: [
       {
-        title: 'Web Development - ABC University, LA, CA',
-        stage: '2011',
+        title: 'High School - AMS, SRE - 95.6%',
+        stage: '2019',
       },
       {
-        title: 'Computer Science Diploma - AV Technical Institute',
-        stage: '2009',
+        title: 'HSC/Intermediate - AMS, SRE - 92%',
+        stage: '2021',
       },
       {
-        title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-        stage: '2006',
+        title: 'E&C Engineering - Jamia Millia Islamia, New Delhi',
+        stage: '2025*',
       },
     ],
   },
@@ -101,38 +101,37 @@ import CountUp from "react-countup";
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="h-full bg-primary/30 py-32 pb-16 md:pb-32 text-center xl:text-left">
       <Circles />
       <motion.div variants={fadeIn('right', 0.2)} initial="hidden" animate="show" exit="hidden" className="hidden xl:flex absolute bottom-0 -left-[370px]">
         <Avatar />
       </motion.div>
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <div className="container overflow-scroll md:overflow-hidden mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
         <div className="flex-1 flex flex-col justify-center">
-          <motion.h2 variants={fadeIn('right', 0.2)} initial="hidden" animate="show" exit="hidden" className="h2">Captivation <span className="text-accent">strories</span> birth magnification designs.</motion.h2>
+          <motion.h2 variants={fadeIn('right', 0.2)} initial="hidden" animate="show" exit="hidden" className="h2 text-[35px]">Behind the <span className="text-accent">Curtain of Code</span>: A Developer's Tale</motion.h2>
           <motion.p variants={fadeIn('right', 0.4)} initial="hidden" animate="show" exit="hidden" className="mx-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0">
-            10 years ago, i began freelancing idbwed wei wedne jidn d ldqwd o
-            webidwebnclkwcb wi wdle eil il il uild wedhieildwe kwed weukwejhlbwe
-            qdjwe bwke weuweo wefweiof iowe foiwe weilf weufgw ufgw eof gweoufwe.
+          Welcome to my digital realm! I'm Huzaif Malik, a passionate software developer on a perpetual quest to craft innovative and seamless online experiences. With a foundation built on code and creativity, I thrive on transforming concepts into functional, visually compelling realities.
+          Beyond the lines of code, I believe in the power of user-centric design, striving to create interfaces that not only meet functional requirements but also elevate the overall user experience.
           </motion.p>
           <motion.div variants={fadeIn('right', 0.6)} initial="hidden" animate="show" exit="hidden" className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8">
             <div className="flex flex-1 xl:gap-x-6">
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
+                  <span><CountUp start={0} end={2} duration={2} />+</span>
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Years of experience</div>
               </div>
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
+                  <span><CountUp start={0} end={400} duration={3} />+</span>
                 </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Years of experience</div>
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Questions on Leetcode</div>
               </div>
               <div className="relative flex-1">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
+                  <span><CountUp start={0} end={10} duration={2} />+</span>
                 </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Years of experience</div>
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Projects</div>
               </div>
             </div>
           </motion.div>
@@ -150,7 +149,7 @@ const About = () => {
           <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
             {aboutData[index].info.map((item, itemIndex) => {
               return (
-                <div key={itemIndex} className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60">
+                <div key={itemIndex} className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center xl:items-baseline text-white/60">
                   <div className="font-light mb-2 mb:mb-0">{item.title}</div>
                   <div className="hidden md:flex">-</div>
                   <div>{item.stage}</div>
