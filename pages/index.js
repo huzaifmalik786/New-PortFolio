@@ -5,10 +5,14 @@ import Circles from "../components/Circles";
 import { motion } from "framer-motion";
 
 import { fadeIn } from "../variants";
+import Head from "next/head";
 
 const Home = () => {
   return (
     <>
+    <Head>
+      <title>Huzaif Malik: Homegage</title>
+    </Head>
       <div className="w-full h-full py-36 md:py-12 pb-16 md:pb-0 bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <div className="flex xl:hidden">
           <Circles />

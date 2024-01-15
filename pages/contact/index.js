@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 
 import { fadeIn } from "../../variants"
   ;
+import Head from "next/head";
 const Contact = () => {
 
   const formRef = useRef(null)
@@ -23,7 +24,11 @@ const Contact = () => {
       });
   };
   return (
-    <div className="h-full bg-primary/30">
+    <>
+    <Head>
+      <title>Huzaif Malil: Contact</title>
+    </Head>
+     <div className="h-full bg-primary/30">
       <Circles />
       {/* <Bulb /> */}
       <div className="container mx-auto xl:py-32 pt-36 xl:pt-32 xl:pr-24 text-center xl:text-left flex flex-col xl:flex-row items-center justify-between h-full">
@@ -82,6 +87,7 @@ const Contact = () => {
 
       </div>
     </div>
+    </>
   );
 };
 
