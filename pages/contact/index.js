@@ -1,18 +1,32 @@
+import { useRef } from "react";
 import Circles from "../../components/Circles";
-import Bulb from "../../components/Bulb";
+import emailjs from '@emailjs/browser';
 
 import { BsArrowRight } from "react-icons/bs";
 
 import { motion } from 'framer-motion'
 
 import { fadeIn } from "../../variants"
-
+  ;
 const Contact = () => {
+
+  const formRef = useRef(null)
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_7llcrcb', 'template_iksz3wo', formRef.current, '70V-X24mg6LjA089r')
+      .then(() => {
+        window.alert('Email sent successfully.');
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
   return (
     <div className="h-full bg-primary/30">
       <Circles />
       {/* <Bulb /> */}
-      <div className="container mx-auto xl:py-32 pt-40 xl:pt-32 xl:pr-24 text-center xl:text-left flex flex-col xl:flex-row items-center justify-between h-full">
+      <div className="container mx-auto xl:py-32 pt-36 xl:pt-32 xl:pr-24 text-center xl:text-left flex flex-col xl:flex-row items-center justify-between h-full">
         <div className="hidden xl:flex flex-col flex-1 align-start -mt-10">
           <motion.h1 variants={fadeIn('up', 0.2)} initial='hidden' animate='show' exit={'hidden'} className="h1 mb-12">
             Let's <span className="text-accent">Work</span> Together.
@@ -50,14 +64,14 @@ const Contact = () => {
               </svg>
             </motion.div>
 
-            <motion.form initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1, delay: 4 }} className="flex flex-col gap-6 w-full mx-auto relative z-10">
+            <motion.form ref={formRef} onSubmit={sendEmail} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1, delay: 4 }} className="flex flex-col gap-6 w-full mx-auto relative z-10">
               <div className="flex gap-x-6 w-full">
-                <input type="text" placeholder="Name" className="input" />
-                <input type="email" placeholder="Email" className="input" />
+                <input name="user_name" type="text" placeholder="Name" className="input" />
+                <input name="user_email" type="email" placeholder="Email" className="input" />
               </div>
-              <input type="text" placeholder="Subject" className="input" />
-              <textarea rows='10' placeholder="Message" className="textarea" />
-              <button className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group">
+              <input name="user_subject" type="text" placeholder="Subject" className="input" />
+              <textarea name="message" rows='10' placeholder="Message" className="textarea" />
+              <button type="submit" className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group">
                 <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">Let's Talk</span>
                 <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
               </button>
